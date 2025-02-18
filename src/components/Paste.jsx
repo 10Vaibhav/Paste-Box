@@ -97,7 +97,7 @@ const Paste = () => {
                     Copy
                   </button>
                   <ShareButton 
-                    text={paste.title}
+                    text={paste.content}
                   />
                 </div>
                 <time className="text-sm text-gray-400 ml-2">{new Date(paste.createdAt).toLocaleDateString()}</time>
