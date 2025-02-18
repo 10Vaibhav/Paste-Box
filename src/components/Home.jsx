@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { addToPastes, UpdateToPastes } from "../redux/pasteSlice";
+import { useSelector } from "react-redux";
+
 
 const Home = () => {
   const [title, setTitle] = useState("");
@@ -9,6 +11,18 @@ const Home = () => {
   const [searchParams, setSearchParams] = useSearchParams(); // it gives object of parameters.
   const pasteId = searchParams.get("pasteId");
   const dispatch = useDispatch();
+  const allPastes = useSelector((state) => state.paste.pastes);
+
+
+  useEffect(()=> {
+
+    if(pasteId){
+      const paste = allPastes.find((p) => p._id === pasteId);
+      setTitle(paste.title);
+      setValue(paste.content);
+    }
+
+  }, [pasteId])
 
   function createPaste(){
     const paste = {
