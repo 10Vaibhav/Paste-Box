@@ -1,7 +1,6 @@
 # 📋 PasteBox - Modern Text Sharing Platform
 
 <div align="center">
-  <img src="/pb.jpg" alt="PasteBox Logo" width="100" />
   <h3><a href="https://paste-box-cyan.vercel.app/" target="_blank">🚀 Live Demo</a></h3>
 </div>
 
