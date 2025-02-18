@@ -50,10 +50,10 @@ const Home = () => {
   }
 
   return (
-    <div>
-      <div className="flex flex-row gap-7 place-content-between">
+    <div className="max-w-7xl mx-auto px-4">
+      <div className="flex flex-row gap-4 items-center">
         <input
-          className="p-1 rounded-2xl mt-2 w-[65%] pl-5"
+          className="flex-1 p-3 rounded-lg border border-gray-700 bg-gray-800 text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
           type="text"
           placeholder="Enter title here"
           value={title}
@@ -61,19 +61,20 @@ const Home = () => {
         />
 
         <button
-        onClick={createPaste}
-        className="p-2 rounded-2xl mt-2">
-          {pasteId ? "Update Paste" : "Create My Paste"}
+          onClick={createPaste}
+          className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+        >
+          {pasteId ? "Update Paste" : "Create Paste"}
         </button>
       </div>
 
-      <div className="mt-8">
+      <div className="mt-6">
         <textarea
-        className="rounded-2xl mt-4 min-w-[500px] p-4"
-        value={value}
-        placeholder="Enter Content Here..."
-        onChange={(e)=> setValue(e.target.value)}
-        rows={20}
+          className="w-full rounded-lg border border-gray-700 bg-gray-800 text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all p-4"
+          value={value}
+          placeholder="Enter Content Here..."
+          onChange={(e)=> setValue(e.target.value)}
+          rows={20}
         />
       </div>
     </div>

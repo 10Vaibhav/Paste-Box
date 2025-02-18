@@ -37,10 +37,12 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div>
+    <div className="min-h-screen bg-gray-900">
       <RouterProvider router={router} />
     </div>
   );
 }
 
 export default App;
+
+

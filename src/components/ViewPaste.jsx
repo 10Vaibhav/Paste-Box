@@ -12,23 +12,22 @@ const ViewPaste = () => {
   const paste = allPastes.filter((p) => p._id === id)[0];
 
   return (
-    <div>
-      <div className="flex flex-row gap-7 place-content-between">
+    <div className="max-w-7xl mx-auto px-4">
+      <div className="mb-6">
+        <label className="block text-sm font-medium text-gray-300 mb-2">Title</label>
         <input
-          className="p-1 rounded-2xl mt-2 w-[65%] pl-5"
+          className="w-full p-3 rounded-lg border border-gray-700 bg-gray-800 text-gray-100"
           type="text"
-          placeholder="Enter title here"
           value={paste.title}
           disabled
         />
-
       </div>
 
-      <div className="mt-8">
+      <div>
+        <label className="block text-sm font-medium text-gray-300 mb-2">Content</label>
         <textarea
-          className="rounded-2xl mt-4 min-w-[500px] p-4"
+          className="w-full rounded-lg border border-gray-700 bg-gray-800 text-gray-100 p-4"
           value={paste.content}
-          placeholder="Enter Content Here..."
           disabled
           rows={20}
         />
