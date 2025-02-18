@@ -39,23 +39,23 @@ const Paste = () => {
               >
                 <h3 className="text-xl font-semibold mb-2 text-gray-100">{paste.title}</h3>
                 <p className="text-gray-300 mb-4 line-clamp-3">{paste.content}</p>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-3">
+                <div className="flex flex-row items-center justify-between gap-4 flex-wrap">
+                  <div className="flex flex-row gap-2">
                     <NavLink 
                       to={`/?pasteId=${paste?._id}`}
-                      className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                      className="px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-center text-sm"
                     >
                       Edit
                     </NavLink>
                     <NavLink 
                       to={`/pastes/${paste?._id}`}
-                      className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
+                      className="px-3 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors text-center text-sm"
                     >
                       View
                     </NavLink>
                     <button 
                       onClick={() => handleDelete(paste?._id)}
-                      className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
+                      className="px-3 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors text-sm"
                     >
                       Delete
                     </button>
@@ -64,7 +64,7 @@ const Paste = () => {
                         navigator.clipboard.writeText(paste?.content);
                         toast.success("Copied to Clipboard");
                       }}
-                      className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors"
+                      className="px-3 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors text-sm"
                     >
                       Copy
                     </button>
