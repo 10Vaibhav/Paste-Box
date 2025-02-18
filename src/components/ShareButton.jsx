@@ -7,9 +7,9 @@ import {
   FaShare,
 } from "react-icons/fa";
 
-const ShareButton = ({ text, url }) => {
+const ShareButton = ({ text}) => {
   const [shareNow, setShareNow] = useState(false);
-  const message = encodeURIComponent(`${text} ${url}`);
+  const message = encodeURIComponent(text);
 
   // Social media share handlers
   const handleWhatsAppShare = () => {
@@ -18,9 +18,7 @@ const ShareButton = ({ text, url }) => {
 
   const handleMessengerShare = () => {
     window.open(
-      `fb-messenger://share/?link=${encodeURIComponent(
-        url
-      )}&app_id=YOUR_APP_ID`,
+      `fb-messenger://share/?link=${message}`,
       "_blank"
     );
   };
@@ -31,9 +29,7 @@ const ShareButton = ({ text, url }) => {
 
   const handleLinkedInShare = () => {
     window.open(
-      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-        url
-      )}`,
+      `https://www.linkedin.com/sharing/share-offsite/?url=${message}`,
       "_blank"
     );
   };

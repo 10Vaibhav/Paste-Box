@@ -98,7 +98,6 @@ const Paste = () => {
                   </button>
                   <ShareButton 
                     text={paste.title}
-                    url={`https://paste-box-cyan.vercel.app/pastes/${paste._id}`}
                   />
                 </div>
                 <time className="text-sm text-gray-400 ml-2">{new Date(paste.createdAt).toLocaleDateString()}</time>
